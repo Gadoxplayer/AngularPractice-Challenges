@@ -1,0 +1,26 @@
+<div class="col-xs-12">
+
+    <h2>Game</h2>
+
+    <button 
+        class="btn btn-success"
+        (click)="numberUp()">
+        Start!
+    </button>
+
+    <button 
+        class="btn btn-danger"
+        (click)="numberStop()">
+        Finish!
+    </button>
+
+    <p>{{ countNumber }}</p>
+
+    <div class="col-xs-10" *ngIf="countNumber % 2 == 0; else oddNumb">
+        <app-even></app-even>
+    </div>
+    <ng-template #oddNumb>
+        <app-odd></app-odd>
+    </ng-template>
+
+</div>

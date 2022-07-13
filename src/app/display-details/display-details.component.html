@@ -1,0 +1,37 @@
+<div class="col-xs-12">
+    <p>Hello</p>
+    <button
+        class="btn btn-primary"
+        (click)="onToggleVisibility(); toChangeButtonText()">
+        {{ messageButton }}
+    </button>
+    <p *ngIf="paragraphVisibility; else noVisibility"> Click the button to display the secret password....</p>
+    <ng-template #noVisibility>
+        <p> Secret Password = tuna 😉😉</p>
+    </ng-template>
+    <!-- <p *ngIf="paragraphVisibility">Secret Password = tuna 😉😉</p>
+    <p *ngIf="placeholderVisibility">Click the button to display the secret password....</p> -->
+    <p>How many times did you press the button?? 🤷‍♂️</p>
+    <div [ngStyle]="{display: 'flex'}">
+        <div>
+            <p *ngFor="let arr of arrOfLog"
+            [ngStyle]="{backgroundColor : arrOfLog.length >= 5 ? 'blue' : 'transparent', color: arrOfLog.length >= 5 ? 'white' : 'black'}">
+                {{ arrOfLog }}</p>
+        </div>
+        <hr>
+        <div>
+            <p *ngFor="let click of countOfClicks"
+            [ngStyle]="{backgroundColor : click >= 5 ? 'blue' : 'transparent'}"
+            [ngClass]="{'isplus5': click >= 5}">
+                {{ click }}</p>
+        </div>
+    </div>
+    
+    
+    <!-- <p *ngFor="let arr of arrOfLog"
+    [ngStyle]="{backgroundColor: toChangeColorLog()}"
+    [ngClass]="isPlus5 ? 'isPlus5' : ''">
+{{ arrOfLog }}</p> -->
+    <hr>
+    <hr>
+</div>
